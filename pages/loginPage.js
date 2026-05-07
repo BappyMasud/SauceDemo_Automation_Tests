@@ -12,7 +12,9 @@ class LoginPage {
     }
 
     async login(id, passkey) {
+        await this.page.locator(this.username).clear();
         await this.page.fill(this.username, id);
+        await this.page.locator(this.password).clear();
         await this.page.fill(this.password, passkey);
         await this.page.click(this.loginButton);
     }
@@ -22,4 +24,4 @@ class LoginPage {
     }
 }
 
-module.exports = LoginPage;
+module.exports = LoginPage; 
