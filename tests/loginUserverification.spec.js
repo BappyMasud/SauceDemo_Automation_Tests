@@ -6,6 +6,6 @@ const userData = require('../datas/userData');
 test('Verify user by login', async ({ page }) => {
     const login = new LoginPage(page);
     await login.goto();
-    await login.login(userData.users.locked, userData.users.password);
+    await login.login(userData.users.locked, userData.password);
     await expect(await login.getError()).toContainText('Epic sadface: Sorry, this user has been locked out.');
 });
