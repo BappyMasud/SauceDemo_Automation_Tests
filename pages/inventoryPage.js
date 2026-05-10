@@ -14,13 +14,14 @@ class InventoryPage {
     }
 
     async sortByZToA() {
-        await this.page.selectOption('[data-test="product_sort_container"]', 'za');
+        await this.page.selectOption('[data-test="product-sort-container"]', 'za');
     }
 
-    async addFirstitem() {
-        const name = await this.page.locator('inventory_item_name').first().textContent();
-        await this.page.locator('.inventory_item_name').first().click();
-        return name;
+    async addFirstItem() {
+    const firstItem = this.page.locator('.inventory_item').first();
+    const name = await firstItem.locator('.inventory_item_name').textContent();
+    await firstItem.locator('button').click();
+    return name;
     }
 }
 
