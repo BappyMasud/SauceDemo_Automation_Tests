@@ -7,7 +7,7 @@ const InventoryPage = require('../pages/inventoryPage');
 const CartPage = require('../pages/cartPage');
 const CheckoutPage = require('../pages/checkoutPage');
 
-test('Q2 - Verify order checkout flow', async ({ page }) => {
+test('Q2 - Standard User Purchase Flow', async ({ page }) => {
     const login = new LoginPage(page);
     const menu = new MenuPage(page);
     const inventory = new InventoryPage(page);

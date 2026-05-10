@@ -7,7 +7,7 @@ const CartPage = require('../pages/cartPage');
 const CheckoutPage = require('../pages/checkoutPage');
 const userData = require('../datas/userData');
 
-test('Q3 - Verify sorting products from Z to A', async ({ page }) => {
+test('Q3 - Performance Glitch User Purchase Flow', async ({ page }) => {
 
     const login = new LoginPage(page);
     const menu = new MenuPage(page);
