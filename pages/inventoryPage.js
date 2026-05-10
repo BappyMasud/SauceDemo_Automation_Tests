@@ -13,7 +13,15 @@ class InventoryPage {
         await this.page.click('[data-test="shopping-cart-link"]');
     }
 
+    async sortByZToA() {
+        await this.page.selectOption('[data-test="product_sort_container"]', 'za');
+    }
 
+    async addFirstitem() {
+        const name = await this.page.locator('inventory_item_name').first().textContent();
+        await this.page.locator('.inventory_item_name').first().click();
+        return name;
+    }
 }
 
 module.exports = InventoryPage;
